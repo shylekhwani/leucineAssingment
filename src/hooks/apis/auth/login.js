@@ -15,7 +15,7 @@ export const useLogin = function() {
         onSuccess: (response) => {
             console.log('Sucessfully Loged In', response);
 
-            const userObject = JSON.stringify(response.data);
+            const userObject = JSON.stringify(response.user);
             // Convert the user data returned from the API (response.data) into a JSON string format. 
             // This is necessary because localStorage only supports string values.
 
@@ -23,12 +23,12 @@ export const useLogin = function() {
             // Store the serialized user object in localStorage under the key 'user'. 
             // This allows the app to persist user information across sessions, even after page reloads or browser restarts.
 
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.token);
             // Save the token separately for API calls. Access it directly from the original `response.data` object.
 
             setAuth({
-                user: response.data,
-                token: response.data.token,
+                user: response.user,
+                token: response.token,
                 isLoading: false
             });
         },

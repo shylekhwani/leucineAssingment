@@ -1,7 +1,7 @@
 import axios from "../../config/axiosConfig.js";
 
 
-export const registerRequest = async function ({email, password, username, role}) {
+export const registerRequest = async function ({email, password, username, role ='Employee'}) {
     try {
         const response = await axios.post('/users/register',{
             email,
