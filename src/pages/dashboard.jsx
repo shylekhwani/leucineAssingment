@@ -2,17 +2,31 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../hooks/context/useContext';
 
 const Dashboard = () => {
-  const { auth } = useAuthContext();
+  const { auth, logOut } = useAuthContext();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logOut();
+    navigate('/login');
+  };
 
   console.log('User:', auth);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
-        <h1 className="text-3xl font-bold mb-4 text-gray-800">
-          Welcome, {auth?.user?.username}!
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold text-gray-800">
+            Welcome, {auth?.user?.username}!
+          </h1>
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+          >
+            Logout
+          </button>
+        </div>
+
         <p className="text-lg text-gray-600 mb-6">
           Role: <span className="font-semibold">{auth?.user?.role}</span>
         </p>

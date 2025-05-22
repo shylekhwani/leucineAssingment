@@ -10,7 +10,7 @@ export const useUpdateRequestStatus = () => {
     mutationFn: ({ softwareId, status }) =>
       updateRequestStatus({ token: auth?.token, softwareId, status }),
     onSuccess: () => {
-      queryClient.invalidateQueries(['allRequests']); // Refresh data
+      queryClient.invalidateQueries(['softwares']); // Refresh data
     }
   });
 };

@@ -1,12 +1,58 @@
-# React + Vite
+📘 User Access Management System — Frontend
+This is the frontend of the User Access Management System, a role-based access control platform where:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* Employees can request access to software.
+* Managers can view, approve, or reject requests.
+* Admins can create software listings.
 
-Currently, two official plugins are available:
+Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔐 JWT Authentication
+👥 Role-based Dashboard
+📦 Software listing & creation
+📝 Access request system
+✅ Approval/Rejection by Managers
+🧠 State management via Context API
+🔄 Data fetching with React Query
+🎨 Tailwind CSS UI
 
-## Expanding the ESLint configuration
+🔧 Technologies Used:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React (Vite)
+* React Router DOM
+* React Query
+* Axios
+* Tailwind CSS
+* Context API
+* LocalStorage
+
+Installation :
+
+1. Clone the repo
+git clone https://github.com/shylekhwani/leucineAssingment.git
+
+2. Install dependencies
+npm install
+
+3. Configure Environment
+VITE_BACKEND_URL=http://localhost:3000/api/v1
+
+
+4. Run the app
+npm run dev
+
+
+| Role         | Abilities                                      |
+| ------------ | ---------------------------------------------- |
+| **Admin**    | Create software                                |
+| **Manager**  | View and manage (approve/reject) requests      |
+| **Employee** | Request software access & track request status |
+
+
+🔐 Authentication Flow
+Login & registration handled via backend.
+Token stored in localStorage.
+On app mount, token is restored and passed to protected APIs via x-access-token header.
+
+✍️ Author
+Developed by Yash Lekhwani — for demo, training, and learning purposes.
