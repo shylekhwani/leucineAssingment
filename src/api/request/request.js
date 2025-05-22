@@ -25,3 +25,30 @@ export const getAccessByCurrentUserRequest = async ({ token }) => {
     throw error.response?.data || error;
   }
 };
+
+export const getAllRequestsForManager = async (token) => {
+  try {
+    const response = await axios.get('requests', {
+      headers: { 'x-access-token': token }
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error.response?.data || error;
+  }
+};
+
+
+export const updateRequestStatus = async ({ token, softwareId, status }) => {
+  try {
+    const response = await axios.patch(
+      `requests/${softwareId}/status`,
+      { status },
+      { headers: { 'x-access-token': token } }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error.response?.data || error;
+  }
+};

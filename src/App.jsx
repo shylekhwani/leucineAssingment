@@ -11,6 +11,7 @@ import { AdminOnly } from './components/software/adminOnly';
 import SoftwareListPage from './pages/softwareListPage';
 import RequestAccessPage from './pages/createRequestPage';
 import MyRequestsPage from './pages/requestAccessPage';
+import ManagerRequestsPage from './pages/managerRequestPage';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/software" element={<SoftwareListPage/>} />
           <Route path="/request-access" element={<ProtectedRoute> <RequestAccessPage/> </ProtectedRoute>} />
           <Route path="/my-requests" element={<ProtectedRoute> <MyRequestsPage/> </ProtectedRoute>} />
+           <Route path="/manage-requests" element={<ProtectedRoute> <ManagerRequestsPage/> </ProtectedRoute>} />
           <Route path="/unauthorized" element={<h1>You are not allowed</h1>} />
         </Routes>
       </AuthContextProvider>
