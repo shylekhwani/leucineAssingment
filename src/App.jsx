@@ -9,6 +9,8 @@ import Dashboard from './pages/dashboard';
 import CreateSoftwarePage from './pages/createSoftwarePage';
 import { AdminOnly } from './components/software/adminOnly';
 import SoftwareListPage from './pages/softwareListPage';
+import RequestAccessPage from './pages/createRequestPage';
+import MyRequestsPage from './pages/requestAccessPage';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
           <Route path="/login" element={<LogInComponent/>} />
           <Route path="/create-software" element={<AdminOnly><CreateSoftwarePage/></AdminOnly> } />
           <Route path="/software" element={<SoftwareListPage/>} />
+          <Route path="/request-access" element={<ProtectedRoute> <RequestAccessPage/> </ProtectedRoute>} />
+          <Route path="/my-requests" element={<ProtectedRoute> <MyRequestsPage/> </ProtectedRoute>} />
           <Route path="/unauthorized" element={<h1>You are not allowed</h1>} />
         </Routes>
       </AuthContextProvider>

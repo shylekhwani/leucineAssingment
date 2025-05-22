@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useRegister } from "../../hooks/apis/auth/register";
+import { useRegister } from "../../hooks/apis/auth/useRegister";
 
 export const Register = function () {
 

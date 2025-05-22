@@ -1,9 +1,9 @@
-import { useGetAllSoftwares } from '../hooks/apis/softwares/getAllSoftware';
+import { useGetAllSoftwares } from '../hooks/apis/softwares/useGetAllSoftware';
 import SoftwareCard from '../components/software/softwareCard';
 
 const SoftwareListPage = () => {
   const { isFetching, error, softwares } = useGetAllSoftwares();
-  console.log(softwares);
+  // console.log(softwares);
 
   if (isFetching) return <p className="p-6">Loading softwares...</p>;
   if (error) return <p className="text-red-500 p-6">Failed to fetch softwares: {error.message}</p>;

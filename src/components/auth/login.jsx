@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useLogin } from "../../hooks/apis/auth/login";
+import { useLogin } from "../../hooks/apis/auth/useLogin";
 
 export const LogInComponent = function() {
     const [email, setEmail] = useState('');
