@@ -7,7 +7,7 @@ export const Register = function () {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [role, setRole] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ export const Register = function () {
 
     try {
       const response = await registerMutation({
-        name,
+        username,
         role,
         email,
         password,
@@ -65,8 +65,8 @@ export const Register = function () {
 
         <input
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           placeholder="First Name"
           required
           className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
